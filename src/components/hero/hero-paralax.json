@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_hero_hero_paralaxes",
+  "info": {
+    "displayName": "heroParalax"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "richtext"
+    },
+    "background": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
