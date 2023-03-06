@@ -4,7 +4,8 @@
   "info": {
     "singularName": "language",
     "pluralName": "languages",
-    "displayName": "languages"
+    "displayName": "languages",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,18 +15,16 @@
     "name": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
-    },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "gists": {
       "type": "relation",

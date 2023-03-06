@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_date_working_dates",
+  "info": {
+    "displayName": "working date",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "contractType": {
+      "type": "enumeration",
+      "enum": [
+        "CDI",
+        "CDD",
+        "Alternance",
+        "FreeLance"
+      ]
+    }
+  }
+}
