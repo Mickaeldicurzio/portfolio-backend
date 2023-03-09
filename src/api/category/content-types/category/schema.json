@@ -12,20 +12,25 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "categoryName": {
-      "type": "enumeration",
-      "enum": [
-        "Front-End",
-        "Back-End",
-        "Dev-Ops",
-        "Integration"
-      ]
-    },
-    "colors": {
+    "color": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToOne",
       "target": "api::color.color",
-      "inversedBy": "categories"
+      "mappedBy": "category"
+    },
+    "languages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::language.language",
+      "mappedBy": "category"
+    },
+    "CategoryName": {
+      "type": "string",
+      "required": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "CategoryName"
     }
   }
 }

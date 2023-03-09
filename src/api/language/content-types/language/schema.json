@@ -37,6 +37,12 @@
       "relation": "manyToMany",
       "target": "api::project.project",
       "inversedBy": "languages"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "languages"
     }
   }
 }

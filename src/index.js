@@ -7,10 +7,12 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  register(/*{ strapi }*/) {
+
+  },
 
   /**
-   * An asynchronous bootstrap function that runs before
+   * An asynchronous bootstrap function that runs before0
    * your application gets started.
    *
    * This gives you an opportunity to set up your data model,
