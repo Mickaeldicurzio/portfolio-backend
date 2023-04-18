@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_travel_travels",
+  "info": {
+    "displayName": "travel",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Place": {
+      "type": "string"
+    },
+    "dateStart": {
+      "type": "date"
+    },
+    "galery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "dateEnd": {
+      "type": "date"
+    }
+  }
+}

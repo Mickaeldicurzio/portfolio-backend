@@ -20,6 +20,12 @@
         "Alternance",
         "FreeLance"
       ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "post": {
+      "type": "string"
     }
   }
 }

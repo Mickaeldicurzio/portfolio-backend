@@ -26,16 +26,11 @@
         "images"
       ]
     },
-    "images": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "Travel": {
+      "displayName": "travel",
+      "type": "component",
+      "repeatable": true,
+      "component": "travel.travel"
     }
   }
 }
