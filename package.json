@@ -12,14 +12,18 @@
   "dependencies": {
     "@strapi/plugin-color-picker": "^4.11.5",
     "@strapi/plugin-graphql": "4.11.5",
-    "@strapi/plugin-i18n": "4.11.5",
-    "@strapi/plugin-users-permissions": "4.11.5",
-    "@strapi/strapi": "4.11.5",
+    "@strapi/strapi": "4.15.5",
+    "@strapi/plugin-users-permissions": "4.15.5",
+    "@strapi/plugin-i18n": "4.15.5",
     "better-sqlite3": "8.0.1",
-    "strapi-plugin-ezforms": "^0.1.5"
+    "strapi-plugin-ezforms": "^0.1.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "styled-components": "5.3.3"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Mickaël DI CURZIO"
   },
   "strapi": {
     "uuid": "8af312ab-9adf-4e39-9cb7-ee662bdd18c1"
