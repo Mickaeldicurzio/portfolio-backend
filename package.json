@@ -12,9 +12,9 @@
   "dependencies": {
     "@strapi/plugin-color-picker": "^4.11.5",
     "@strapi/plugin-graphql": "4.11.5",
-    "@strapi/strapi": "4.15.5",
-    "@strapi/plugin-users-permissions": "4.15.5",
-    "@strapi/plugin-i18n": "4.15.5",
+    "@strapi/strapi": "v4.24.4",
+    "@strapi/plugin-users-permissions": "v4.24.4",
+    "@strapi/plugin-i18n": "v4.24.4",
     "better-sqlite3": "8.0.1",
     "strapi-plugin-ezforms": "^0.1.5",
     "react": "^18.0.0",
