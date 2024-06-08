@@ -10,10 +10,19 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "projects": {
       "type": "relation",
@@ -23,7 +32,12 @@
     "hero": {
       "type": "component",
       "repeatable": false,
-      "component": "hero.hero-paralax"
+      "component": "hero.hero-paralax",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "cv": {
       "type": "media",
@@ -34,13 +48,23 @@
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "distinctions": {
       "displayName": "distonctions",
       "type": "component",
       "repeatable": true,
-      "component": "distinctions.distonctions"
+      "component": "distinctions.distonctions",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

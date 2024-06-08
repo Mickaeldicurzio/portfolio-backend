@@ -918,11 +918,36 @@ export interface ApiAboutMeAboutMe extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.RichText;
-    profilePicture: Attribute.Media<'images'>;
-    Travel: Attribute.Component<'travel.travel', true>;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    profilePicture: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Travel: Attribute.Component<'travel.travel', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -938,6 +963,12 @@ export interface ApiAboutMeAboutMe extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::about-me.about-me',
+      'oneToMany',
+      'api::about-me.about-me'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -997,6 +1028,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     CategoryName: Attribute.String & Attribute.Required;
     Slug: Attribute.UID<'api::category.category', 'CategoryName'>;
+    priority: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1064,16 +1096,42 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    experiences: Attribute.Component<'date.working-date', true>;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    experiences: Attribute.Component<'date.working-date', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     projects: Attribute.Relation<
       'api::company.company',
       'oneToMany',
       'api::project.project'
     >;
-    link: Attribute.String;
+    link: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1089,6 +1147,12 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::company.company',
+      'oneToMany',
+      'api::company.company'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1168,16 +1232,41 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    description: Attribute.RichText;
+    description: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     projects: Attribute.Relation<
       'api::homepage.homepage',
       'oneToMany',
       'api::project.project'
     >;
-    hero: Attribute.Component<'hero.hero-paralax'>;
-    cv: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    distinctions: Attribute.Component<'distinctions.distonctions', true>;
+    hero: Attribute.Component<'hero.hero-paralax'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cv: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    distinctions: Attribute.Component<'distinctions.distonctions', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1193,6 +1282,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::homepage.homepage'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1207,9 +1302,24 @@ export interface ApiLanguageLanguage extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String;
-    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     gists: Attribute.Relation<
       'api::language.language',
       'oneToMany',
@@ -1240,6 +1350,12 @@ export interface ApiLanguageLanguage extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::language.language',
+      'oneToMany',
+      'api::language.language'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1347,17 +1463,49 @@ export interface ApiTestimonyTestimony extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    testimony: Attribute.RichText & Attribute.Required;
-    pictures: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    date: Attribute.Date;
-    profile: Attribute.String;
+    testimony: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    pictures: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    date: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    profile: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     company: Attribute.Relation<
       'api::testimony.testimony',
       'oneToOne',
       'api::company.company'
     >;
-    name: Attribute.String & Attribute.Required;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1373,6 +1521,12 @@ export interface ApiTestimonyTestimony extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::testimony.testimony',
+      'oneToMany',
+      'api::testimony.testimony'
+    >;
+    locale: Attribute.String;
   };
 }
 
