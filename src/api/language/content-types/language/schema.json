@@ -57,6 +57,12 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "languages"
+    },
+    "article": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::article.article",
+      "inversedBy": "languages"
     }
   }
 }

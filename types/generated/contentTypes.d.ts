@@ -986,6 +986,21 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     slug: Attribute.UID<'api::article.article', 'title'>;
+    content: Attribute.Blocks & Attribute.Required;
+    categories: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::category.category'
+    >;
+    languages: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::language.language'
+    >;
+    presentationImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1029,6 +1044,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     CategoryName: Attribute.String & Attribute.Required;
     Slug: Attribute.UID<'api::category.category', 'CategoryName'>;
     priority: Attribute.Integer;
+    article: Attribute.Relation<
+      'api::category.category',
+      'manyToOne',
+      'api::article.article'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1334,6 +1354,11 @@ export interface ApiLanguageLanguage extends Schema.CollectionType {
       'api::language.language',
       'manyToOne',
       'api::category.category'
+    >;
+    article: Attribute.Relation<
+      'api::language.language',
+      'manyToOne',
+      'api::article.article'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
