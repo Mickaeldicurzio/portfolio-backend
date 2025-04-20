@@ -1,6 +1,6 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface DateTravel extends Schema.Component {
+export interface DateTravel extends Struct.ComponentSchema {
   collectionName: 'components_date_travels';
   info: {
     displayName: 'travel';
@@ -8,49 +8,37 @@ export interface DateTravel extends Schema.Component {
   attributes: {};
 }
 
-export interface DateWorkingDate extends Schema.Component {
+export interface DateWorkingDate extends Struct.ComponentSchema {
   collectionName: 'components_date_working_dates';
   info: {
-    displayName: 'working date';
     description: '';
+    displayName: 'working date';
   };
   attributes: {
-    startDate: Attribute.Date;
-    endDate: Attribute.Date;
-    contractType: Attribute.Enumeration<
+    contractType: Schema.Attribute.Enumeration<
       ['CDI', 'CDD', 'Alternance', 'FreeLance']
     >;
-    description: Attribute.RichText;
-    post: Attribute.String;
+    description: Schema.Attribute.RichText;
+    endDate: Schema.Attribute.Date;
+    post: Schema.Attribute.String;
+    startDate: Schema.Attribute.Date;
   };
 }
 
-export interface DistinctionsDistonctions extends Schema.Component {
+export interface DistinctionsDistonctions extends Struct.ComponentSchema {
   collectionName: 'components_distinctions_distonctions';
   info: {
-    displayName: 'distonctions';
     description: '';
+    displayName: 'distonctions';
   };
   attributes: {
-    title: Attribute.String;
-    link: Attribute.String;
-    description: Attribute.String;
+    description: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface HeroHeroParalax extends Schema.Component {
-  collectionName: 'components_hero_hero_paralaxes';
-  info: {
-    displayName: 'heroParalax';
-  };
-  attributes: {
-    title: Attribute.String;
-    subtitle: Attribute.RichText;
-    background: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-  };
-}
-
-export interface HeroHero extends Schema.Component {
+export interface HeroHero extends Struct.ComponentSchema {
   collectionName: 'components_hero_heroes';
   info: {
     displayName: 'hero';
@@ -58,28 +46,46 @@ export interface HeroHero extends Schema.Component {
   attributes: {};
 }
 
-export interface TravelTravel extends Schema.Component {
-  collectionName: 'components_travel_travels';
+export interface HeroHeroParalax extends Struct.ComponentSchema {
+  collectionName: 'components_hero_hero_paralaxes';
   info: {
-    displayName: 'travel';
-    description: '';
+    displayName: 'heroParalax';
   };
   attributes: {
-    Place: Attribute.String;
-    dateStart: Attribute.Date;
-    galery: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    dateEnd: Attribute.Date;
+    background: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    subtitle: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+export interface TravelTravel extends Struct.ComponentSchema {
+  collectionName: 'components_travel_travels';
+  info: {
+    description: '';
+    displayName: 'travel';
+  };
+  attributes: {
+    dateEnd: Schema.Attribute.Date;
+    dateStart: Schema.Attribute.Date;
+    galery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Place: Schema.Attribute.String;
+  };
+}
+
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'date.travel': DateTravel;
       'date.working-date': DateWorkingDate;
       'distinctions.distonctions': DistinctionsDistonctions;
-      'hero.hero-paralax': HeroHeroParalax;
       'hero.hero': HeroHero;
+      'hero.hero-paralax': HeroHeroParalax;
       'travel.travel': TravelTravel;
     }
   }

@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "mdicurzio-portfolio-back",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -10,16 +10,22 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-color-picker": "^4.11.5",
-    "@strapi/plugin-graphql": "4.11.5",
-    "@strapi/plugin-i18n": "v4.25.9",
-    "@strapi/plugin-users-permissions": "v4.25.9",
-    "@strapi/strapi": "v4.25.9",
-    "better-sqlite3": "11.2.1",
+    "@strapi/plugin-color-picker": "^5",
+    "@strapi/plugin-graphql": "^5",
+    
+    "@strapi/plugin-users-permissions": "^5",
+    "@strapi/strapi": "^5.12.5",
+    "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
   },
   "author": {
     "name": "Mickaël DI CURZIO"
@@ -28,7 +34,7 @@
     "uuid": "8af312ab-9adf-4e39-9cb7-ee662bdd18c1"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
