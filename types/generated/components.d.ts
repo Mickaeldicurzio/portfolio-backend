@@ -68,6 +68,7 @@ export interface TravelTravel extends Struct.ComponentSchema {
     displayName: 'travel';
   };
   attributes: {
+    countryCode: Schema.Attribute.String;
     dateEnd: Schema.Attribute.Date;
     dateStart: Schema.Attribute.Date;
     galery: Schema.Attribute.Media<

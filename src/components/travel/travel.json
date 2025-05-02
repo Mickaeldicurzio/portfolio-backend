@@ -25,6 +25,9 @@
     },
     "dateEnd": {
       "type": "date"
+    },
+    "countryCode": {
+      "type": "string"
     }
   }
 }
